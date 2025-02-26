@@ -23,7 +23,7 @@ export default function ProductGrid({ categoryId }: ProductGridProps) {
 
   if (isLoading) {
     return (
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {[...Array(8)].map((_, i) => (
           <Card key={i} className="animate-pulse">
             <div className="aspect-square bg-gray-200" />
@@ -38,7 +38,7 @@ export default function ProductGrid({ categoryId }: ProductGridProps) {
   }
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {products.map((product, index) => (
         <motion.div
           key={product.id}
