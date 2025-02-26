@@ -25,13 +25,13 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link href="/">
-          <a className="text-2xl font-bold text-primary">Hobe Design</a>
+          <a className="text-xl font-bold text-primary">Hobe Design</a>
         </Link>
 
-        <nav className="flex items-center gap-6">
+        <nav className="flex items-center gap-3">
           {menuItems.map((item) => (
             <Link key={item.href} href={item.href}>
-              <a className="text-sm font-medium hover:text-primary">
+              <a className="text-xs font-medium hover:text-primary whitespace-nowrap">
                 {item.label}
               </a>
             </Link>
@@ -39,13 +39,13 @@ export default function Header() {
 
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" className="gap-1">
-                Resources <ChevronDown className="h-4 w-4" />
+              <Button variant="ghost" size="sm" className="gap-1 text-xs">
+                Resources <ChevronDown className="h-3 w-3" />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
               {resourceItems.map((item) => (
-                <DropdownMenuItem key={item.href}>
+                <DropdownMenuItem key={item.href} className="text-xs">
                   <Link href={item.href}>
                     <a className="w-full">{item.label}</a>
                   </Link>
@@ -54,8 +54,8 @@ export default function Header() {
             </DropdownMenuContent>
           </DropdownMenu>
 
-          <Button variant="outline" size="icon">
-            <ShoppingCart className="h-5 w-5" />
+          <Button variant="outline" size="icon" className="h-8 w-8">
+            <ShoppingCart className="h-4 w-4" />
           </Button>
         </nav>
       </div>
