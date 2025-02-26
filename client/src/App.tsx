@@ -6,6 +6,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Home from "@/pages/Home";
 import ProductPage from "@/pages/ProductPage";
+import AnnouncementPage from "@/pages/AnnouncementPage";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -13,6 +14,7 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/product/:id" component={ProductPage} />
+      <Route path="/announcement/:id" component={AnnouncementPage} />
       <Route component={NotFound} />
     </Switch>
   );

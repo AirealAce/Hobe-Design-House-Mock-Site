@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useState, useEffect } from "react";
 import { type Announcement } from "@shared/schema";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "wouter";
 
 const backgroundImages = [
   "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace",
@@ -31,7 +32,7 @@ export default function AnnouncementBanner() {
   if (!announcements.length) return null;
 
   return (
-    <div className="relative h-32 overflow-hidden">
+    <div className="relative h-48 mt-16 overflow-hidden"> {/* Increased height and added margin-top */}
       <AnimatePresence mode="wait">
         <motion.div
           key={bgIndex}
@@ -58,7 +59,11 @@ export default function AnnouncementBanner() {
             transition={{ duration: 0.5 }}
             className="text-center text-white text-xl md:text-2xl font-semibold px-4"
           >
-            {announcements[currentIndex].content}
+            <Link href={`/announcement/${announcements[currentIndex].id}`}>
+              <a className="hover:underline cursor-pointer">
+                {announcements[currentIndex].content}
+              </a>
+            </Link>
           </motion.div>
         </AnimatePresence>
       </div>
