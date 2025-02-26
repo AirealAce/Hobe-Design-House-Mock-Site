@@ -15,9 +15,9 @@ export default function Home() {
       <div className="container py-12">
         <CategorySelector
           selectedCategory={selectedCategory}
-          onSelect={(category) => setSelectedCategory(category === "All" ? "" : category)}
+          onSelect={setSelectedCategory}
         />
-        <ProductGrid category={selectedCategory || undefined} />
+        <ProductGrid category={selectedCategory === "All" ? undefined : selectedCategory} />
       </div>
       <TestimonialSection />
     </div>
