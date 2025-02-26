@@ -13,15 +13,15 @@ export default function CategorySelector({ onSelect, selectedCategory }: Categor
     "All",
     "Accessories",
     "Bags",
+    "Lighting",
     "Stationery",
-    "Electronics",
     "Home Decor",
   ];
 
   return (
-    <div className="py-8">
-      <ScrollArea className="w-full whitespace-nowrap rounded-md">
-        <div className="flex w-max space-x-4 p-1">
+    <div className="py-8 flex justify-center">
+      <ScrollArea className="w-full max-w-3xl mx-auto rounded-md">
+        <div className="flex justify-center space-x-4 p-1">
           {categories.map((category) => (
             <motion.div
               key={category}

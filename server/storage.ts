@@ -32,41 +32,62 @@ export class MemStorage implements IStorage {
   private initializeData() {
     const sampleProducts: InsertProduct[] = [
       {
-        name: "Premium Watch",
-        description: "Elegant timepiece for the modern professional",
-        price: 299,
+        name: "Modern Leather Watch",
+        description: "Elegant timepiece crafted from genuine leather and stainless steel. Features precision quartz movement, water resistance up to 30m, and a sleek minimalist design perfect for both casual and formal occasions.",
+        price: 29900,
         imageUrl: "https://images.unsplash.com/photo-1523275335684-37898b6baf30",
-        category: "Accessories",
+        category: "Accessories"
       },
       {
-        name: "Designer Bag",
-        description: "Handcrafted leather bag for everyday use",
-        price: 199,
-        imageUrl: "https://images.unsplash.com/photo-1509695507497-903c140c43b0",
-        category: "Bags",
+        name: "Premium Laptop Bag",
+        description: "Professional laptop bag made from premium water-resistant canvas. Features multiple compartments, padded laptop sleeve, and genuine leather accents. Perfect for the modern professional on the go.",
+        price: 19900,
+        imageUrl: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62",
+        category: "Bags"
       },
-      // Add more sample products...
+      {
+        name: "Minimalist Desk Lamp",
+        description: "Contemporary LED desk lamp with adjustable brightness levels and color temperature. The slim profile and premium aluminum construction make it perfect for any modern workspace.",
+        price: 12900,
+        imageUrl: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c",
+        category: "Lighting"
+      }
     ];
 
     const sampleTestimonials: InsertTestimonial[] = [
       {
         author: "Sarah Johnson",
-        role: "Creative Director",
-        content: "The quality and design of Hobe products are exceptional. They've become an essential part of our studio's aesthetic.",
-        imageUrl: "https://images.unsplash.com/photo-1521830101529-057b1dfd9784",
+        role: "Interior Designer",
+        content: "Hobe Design's attention to detail and quality is unmatched. Their products have become an essential part of my design projects, consistently exceeding my clients' expectations.",
+        imageUrl: "https://images.unsplash.com/photo-1494790108377-be9c29b29330"
       },
-      // Add more testimonials...
+      {
+        author: "Michael Chen",
+        role: "Creative Director",
+        content: "The modern aesthetic and functionality of Hobe's products perfectly align with our studio's vision. Their customer service is exceptional, making every purchase a pleasure.",
+        imageUrl: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e"
+      },
+      {
+        author: "Emily Rodriguez",
+        role: "Architect",
+        content: "What sets Hobe Design apart is their commitment to sustainable practices without compromising on style. Their products are both beautiful and environmentally conscious.",
+        imageUrl: "https://images.unsplash.com/photo-1580489944761-15a19d654956"
+      }
     ];
 
     const sampleAnnouncements: InsertAnnouncement[] = [
       {
         content: "Spring Collection Launch - 20% Off All New Arrivals!",
-        active: true,
+        active: true
       },
       {
-        content: "Free Shipping on Orders Over $100",
-        active: true,
+        content: "Free Shipping on Orders Over $150 - Limited Time Only",
+        active: true
       },
+      {
+        content: "Join Our Design Workshop - Register Now for Early Bird Pricing",
+        active: true
+      }
     ];
 
     sampleProducts.forEach((product, index) => {
