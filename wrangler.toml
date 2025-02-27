@@ -1,0 +1,30 @@
+name = "hobe-design-house"
+main = "server/index.ts"
+compatibility_date = "2024-02-27"
+
+[build]
+command = "npm run build"
+cwd = "."
+watch_dir = "src"
+
+[site]
+bucket = "./dist"
+
+# Development environment
+[env.development]
+name = "hobe-design-house-dev"
+vars = { NODE_ENV = "development" }
+
+# Production environment
+[env.production]
+name = "hobe-design-house-prod"
+vars = { NODE_ENV = "production" }
+routes = [
+  { pattern = "/*", zone_name = "your-domain.com" }
+]
+
+# Configure build output directory
+[build.upload]
+format = "service-worker"
+dir = "dist"
+main = "./dist/server/index.js"
