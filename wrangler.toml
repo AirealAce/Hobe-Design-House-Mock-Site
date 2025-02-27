@@ -22,9 +22,6 @@ vars = {
   NODE_ENV = "production",
   DATABASE_URL = "postgresql://neondb_owner:npg_KVNjdcf0v5RB@ep-sweet-fog-a86epj7s-pooler.eastus2.azure.neon.tech/neondb?sslmode=require"
 }
-routes = [
-  { pattern = "/*", zone_name = "your-domain.com" }
-]
 
 # Configure build output directory
 [build.upload]
