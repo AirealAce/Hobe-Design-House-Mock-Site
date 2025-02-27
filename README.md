@@ -2,6 +2,32 @@
 
 A modern business website built with React, TypeScript, and Tailwind CSS.
 
+## CloudFlare Deployment
+
+1. Prerequisites:
+   - A CloudFlare account
+   - Wrangler CLI installed globally: `npm install -g wrangler`
+
+2. Configure Environment:
+   - Copy `.env.example` to `.env`
+   - Add your CloudFlare credentials:
+     - CLOUDFLARE_ACCOUNT_ID
+     - CLOUDFLARE_API_TOKEN
+     - CLOUDFLARE_ZONE_ID
+
+3. Deploy:
+   ```bash
+   # Build the project
+   npm run build
+
+   # Deploy using CloudFlare (the output directory is already set to 'dist')
+   wrangler deploy
+   ```
+
+4. Verify:
+   - Check your CloudFlare dashboard
+   - Your site should be live at your configured domain
+
 ## Local Development Setup
 
 1. Clone the repository:
@@ -43,33 +69,6 @@ The application will be available at `http://localhost:5000`.
 }
 ```
 
-## CloudFlare Deployment
-
-1. Install Wrangler CLI globally:
-```bash
-npm install -g wrangler
-```
-
-2. Login to CloudFlare:
-```bash
-wrangler login
-```
-
-3. Configure your environment variables in CloudFlare:
-```bash
-wrangler secret put DATABASE_URL
-wrangler secret put NODE_ENV
-```
-
-4. Deploy to CloudFlare:
-```bash
-# Deploy to development
-npm run deploy:dev
-
-# Deploy to production
-npm run deploy:prod
-```
-
 ## Technology Stack
 
 - React with TypeScript
@@ -98,8 +97,7 @@ DATABASE_URL=postgresql://user:password@localhost:5432/hobe_design
 
 - `npm run dev` - Start development server
 - `npm run build` - Build for production
-- `npm run deploy:dev` - Deploy to CloudFlare development environment
-- `npm run deploy:prod` - Deploy to CloudFlare production environment
+- `wrangler deploy` - Deploy to CloudFlare
 
 ## Contributing
 
