@@ -28,3 +28,8 @@ routes = [
 format = "service-worker"
 dir = "dist"
 main = "./dist/server/index.js"
+
+# Add database binding
+[[env.production.bindings]]
+type = "postgres"
+name = "DATABASE"
