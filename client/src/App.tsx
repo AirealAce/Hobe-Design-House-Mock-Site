@@ -20,7 +20,7 @@ function Router() {
   );
 }
 
-function App() {
+export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <div className="min-h-screen flex flex-col">
@@ -34,20 +34,3 @@ function App() {
     </QueryClientProvider>
   );
 }
-
-export default App;
-import React from "react";
-import { Header } from "./components/Header";
-
-function App() {
-  return (
-    <div className="min-h-screen flex flex-col">
-      <Header />
-      <main className="flex-1 container py-6">
-        {/* Your app content here */}
-      </main>
-    </div>
-  );
-}
-
-export default App;
