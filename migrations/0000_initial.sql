@@ -1,9 +1,14 @@
+-- Drop existing data to avoid duplicates
+TRUNCATE products, testimonials, announcements CASCADE;
+
 -- Initial seed data for products
 INSERT INTO products (name, description, price, image_url, category)
 VALUES 
   ('Modern Leather Watch', 'Elegant timepiece crafted from genuine leather and stainless steel. Features precision quartz movement, water resistance up to 30m, and a sleek minimalist design perfect for both casual and formal occasions.', 29900, 'https://images.unsplash.com/photo-1523275335684-37898b6baf30', 'Accessories'),
   ('Premium Laptop Bag', 'Professional laptop bag made from premium water-resistant canvas. Features multiple compartments, padded laptop sleeve, and genuine leather accents. Perfect for the modern professional on the go.', 19900, 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62', 'Bags'),
-  ('Minimalist Desk Lamp', 'Contemporary LED desk lamp with adjustable brightness levels and color temperature. The slim profile and premium aluminum construction make it perfect for any modern workspace.', 12900, 'https://images.unsplash.com/photo-1507473885765-e6ed057f782c', 'Lighting');
+  ('Minimalist Desk Lamp', 'Contemporary LED desk lamp with adjustable brightness levels and color temperature. The slim profile and premium aluminum construction make it perfect for any modern workspace.', 12900, 'https://images.unsplash.com/photo-1507473885765-e6ed057f782c', 'Lighting'),
+  ('Designer Notebook Set', 'Premium hardcover notebooks with acid-free paper and lay-flat binding. Perfect for sketching, journaling, or taking notes in style.', 2499, 'https://images.unsplash.com/photo-1531346680769-a1e9e1959137', 'Stationery'),
+  ('Modern Wall Clock', 'Sleek wall clock with silent movement and minimalist design. Made from brushed aluminum and tempered glass.', 8999, 'https://images.unsplash.com/photo-1563861826100-9cb868fdbe1c', 'Home Decor');
 
 -- Initial seed data for testimonials
 INSERT INTO testimonials (author, role, content, image_url)
