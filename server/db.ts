@@ -2,6 +2,7 @@ import { Pool, neonConfig } from '@neondatabase/serverless';
 import { drizzle } from 'drizzle-orm/neon-serverless';
 import ws from "ws";
 import * as schema from "@shared/schema";
+import { products } from "@shared/schema";
 
 neonConfig.webSocketConstructor = ws;
 
@@ -13,3 +14,18 @@ if (!process.env.DATABASE_URL) {
 
 export const pool = new Pool({ connectionString: process.env.DATABASE_URL });
 export const db = drizzle({ client: pool, schema });
+
+// Function to check if products are seeded
+export async function ensureProductsSeeded() {
+  try {
+    const productCount = await db.select().from(products);
+    console.log(`Database connection successful. Found ${productCount.length} products.`);
+
+    if (productCount.length === 0) {
+      console.warn('Warning: No products found in database. Products should be seeded during deployment.');
+    }
+  } catch (error) {
+    console.error('Error connecting to database:', error);
+    throw new Error('Failed to verify database connection and products');
+  }
+}

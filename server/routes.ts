@@ -1,8 +1,12 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
+import { ensureProductsSeeded } from "./db";
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  // Verify database connection and products on startup
+  await ensureProductsSeeded();
+
   // Products endpoints
   app.get("/api/products", async (_req, res) => {
     const products = await storage.getProducts();
